@@ -16,8 +16,10 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+        <?php $ingredients_archive_url = get_post_type_archive_link('ingredients'); ?>
+        <a href="<?php $ingredients_archive_url ?>">Les Ingrédients</a>
 		<?php
+
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
