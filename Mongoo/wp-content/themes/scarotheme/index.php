@@ -13,11 +13,13 @@
  */
 
 get_header();
+
 ?>
 
+    <a href="<?php echo get_post_type_archive_link('ingredients'); ?>">Les Ingrédients</a>
+
 	<main id="primary" class="site-main">
-        <?php $ingredients_archive_url = get_post_type_archive_link('ingredients'); ?>
-        <a href="<?php $ingredients_archive_url ?>">Les Ingrédients</a>
+
 		<?php
 
 		if ( have_posts() ) :
