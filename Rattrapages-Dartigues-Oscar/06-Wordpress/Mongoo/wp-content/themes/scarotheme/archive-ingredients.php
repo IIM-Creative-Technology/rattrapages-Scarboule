@@ -4,23 +4,32 @@
 // Template Name: Archive Ingrédients
 
 get_header();
-
+//$terms = get_terms('ingredient-type');
+//var_dump($terms);
+?>
+<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="GET">
+    <select name="taxonomy-type">
+        <option value="">Tous les types</option>
+        <?php
+        $terms = get_terms('ingredient-type');
+        foreach ($terms as $term) {
+            echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
+        }
+        ?>
+    </select>
+    <input type="submit" value="Filtrer">
+</form>
+<?php
 if (have_posts()) {
     while (have_posts()) {
         the_post();
-        // Affichage des informations de l'ingrédient, par exemple le titre et les champs ACF
-        the_title('<h2>', '</h2>');
+        ?>
+        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-        // Vous pouvez accéder aux champs ACF avec la fonction `get_field`
-        $couleur = get_field('couleur');
-        $prix = get_field('prix');
-
-        // Affiche les valeurs des champs ACF
-        echo '<p>Couleur : ' . $couleur . '</p>';
-        echo '<p>Prix : ' . $prix . '</p>';
+        <?php
     }
 } else {
-    echo '<p>Aucun ingrédient trouvé.</p>';
+    echo 'Aucun ingrédient trouvé.';
 }
 
 get_footer();
