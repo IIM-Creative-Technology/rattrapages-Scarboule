@@ -1,0 +1,19 @@
+.scarohead{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+.menu-menu-1-container{
+    display:flex;
+    justify-content:center;
+}
+.menu-menu-1-container ul li a{
+    padding: 12px;
+    color: #FFFFFF;
+    background-color:#b3d335;
+    border-radius:1rem;
+}
+.menu-menu-1-container ul li a:hover{
+    background-color:#62a1d9;
+
+}

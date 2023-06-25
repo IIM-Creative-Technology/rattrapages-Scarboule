@@ -9,7 +9,9 @@ $terms = get_terms(array(
     'taxonomy' => 'ingredient-type',
     'hide_empty' => true,
 ));
+get_header();
 ?>
+
 
 <form action="<?php echo esc_url(get_post_type_archive_link('ingredients')); ?>" method="POST" style="margin-top:10%;">
 
