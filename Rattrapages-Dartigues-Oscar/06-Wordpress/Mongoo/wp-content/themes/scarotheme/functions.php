@@ -142,8 +142,6 @@ function scarotheme_scripts() {
 
     wp_enqueue_style( 'scarostyle', get_theme_file_uri() . '/scarostyle.css');
 
-
-
     wp_enqueue_style( 'scarotheme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'scarotheme-style', 'rtl', 'replace' );
 

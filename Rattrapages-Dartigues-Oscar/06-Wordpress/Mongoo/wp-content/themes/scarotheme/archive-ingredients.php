@@ -1,9 +1,6 @@
 <?php
 $taxonomy_type = '';
-if (isset($_GET['taxonomy-type'])) {
-    $taxonomy_type = sanitize_key($_GET['taxonomy-type']);
 
-}
 
 $terms = get_terms(array(
     'taxonomy' => 'ingredient-type',
