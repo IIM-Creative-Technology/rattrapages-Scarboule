@@ -183,4 +183,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function redirect_to_ingredients() {
+    if (is_front_page()){
+        wp_redirect(home_url('/?post_type=ingredients'));
+        exit();
+    }
+}
+add_action('template_redirect', 'redirect_to_ingredients');
 
