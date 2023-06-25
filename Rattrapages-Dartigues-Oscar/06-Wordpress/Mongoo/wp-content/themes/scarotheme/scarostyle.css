@@ -1,11 +1,20 @@
 .scarohead{
+    margin-top:12px;
     display: flex;
     align-items:center;
     justify-content:center;
 }
+body{
+    margin:0 18px !important;
+}
 .menu-menu-1-container{
     display:flex;
     justify-content:center;
+    margin-top:8px;
+}
+.menu-menu-1-container ul{
+    display:flex;
+    gap:12px;
 }
 .menu-menu-1-container ul li a{
     padding: 12px;
@@ -16,4 +25,30 @@
 .menu-menu-1-container ul li a:hover{
     background-color:#62a1d9;
 
+}
+#filter-ingredient{
+    margin-top:12px;
+}
+
+.vert{
+    display:flex;
+    margin:8px;
+
+    padding: 12px;
+    color: #FFFFFF;
+    background-color:#b3d335;
+    border-radius:1rem;
+    text-decoration:none;
+}
+.bleu{
+    display:flex;
+    margin:8px;
+    padding: 12px;
+    color: #FFFFFF;
+    background-color:#62a1d9;
+    border-radius:1rem;
+    text-decoration:none;
+}
+a:visited{
+    color:#FFF !important;
 }

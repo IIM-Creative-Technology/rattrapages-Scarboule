@@ -12,13 +12,14 @@ $terms = get_terms(array(
 get_header();
 ?>
 
-
-<form action="<?php echo esc_url(get_post_type_archive_link('ingredients')); ?>" method="POST" style="margin-top:10%;">
+<h1>Les articles pour ta salade composée</h1>
+<form id="filter-ingredient" action="<?php echo esc_url(get_post_type_archive_link('ingredients')); ?>" method="POST">
 
 
     <select name="taxonomy-type">
         <option value="">Tous les types</option>
         <?php foreach ($terms as $term) : ?>
+
             <option value="<?php echo esc_attr($term->slug); ?>" <?php selected($term->slug, $taxonomy_type); ?>><?php echo esc_html($term->name); ?></option>
         <?php endforeach; ?>
     </select>
@@ -52,8 +53,10 @@ $ingredients_query = new WP_Query($args);
 if ($ingredients_query->have_posts()) {
     while ($ingredients_query->have_posts()) {
         $ingredients_query->the_post();
+        $couleur = get_field('couleur');
         ?>
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <h2><a class="<?php echo $couleur?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
         <?php
     }
 } else {
