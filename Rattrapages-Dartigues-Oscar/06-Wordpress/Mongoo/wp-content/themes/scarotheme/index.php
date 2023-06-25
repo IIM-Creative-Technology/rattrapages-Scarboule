@@ -11,7 +11,7 @@
  *
  * @package ScaroTheme
  */
-
+echo is_front_page();
 get_header();
 
 ?>
