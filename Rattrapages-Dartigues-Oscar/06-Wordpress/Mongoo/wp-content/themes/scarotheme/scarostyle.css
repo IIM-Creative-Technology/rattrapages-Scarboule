@@ -52,3 +52,12 @@ body{
 a:visited{
     color:#FFF !important;
 }
+.ingredient-content{
+    display:flex;
+    width: 90vw;
+    justify-content:space-between;
+    margin-top:28px;
+}
+.salade{
+    max-width: 50%;
+}
